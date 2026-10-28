@@ -13,25 +13,17 @@
 
 ```
 geometric_lib/
-├── circle.py       # круг
-├── square.py       # квадрат
-├── rectangle.py    # прямоугольник
-├── triangle.py     # треугольник
-└── docs/
-    └── README.md   # документация
+- circle.py       # круг
+- square.py       # квадрат
+- rectangle.py    # прямоугольник
+- triangle.py     # треугольник
+- test_circle.py     # unit-тесты для circle.py
+- test_square.py     # unit-тесты для square.py
+- test_rectangle.py  # unit-тесты для rectangle.py
+- test_triangle.py   # unit-тесты для triangle.py
+- docs/
+    - README.md   # документация
 ```
-
-### Использование
-
-```python
-import circle
-import rectangle
-
-print(circle.area(5))
-print(rectangle.perimeter(3, 4))
-```
-
-Внешних зависимостей нет, используется только стандартная библиотека `math`.
 
 ## Описание функций
 
@@ -54,7 +46,7 @@ print(rectangle.perimeter(3, 4))
 
 #### `perimeter(r)`
 
-Вычисляет периметр круга по формуле P  = 2πR.
+Вычисляет периметр круга по формуле P  = 2πr
 
 | Параметр | Тип | Описание |
 |---|---|---|
@@ -148,7 +140,7 @@ print(rectangle.perimeter(3, 4))
 
 ```python
 >>> triangle.area(6, 4)
-12
+12.0
 ```
 
 #### `perimeter(a, b, c)`
@@ -167,15 +159,34 @@ print(rectangle.perimeter(3, 4))
 >>> triangle.perimeter(3, 4, 5)
 12
 ```
+## Тестирование
+
+Для каждой фигуры написаны unit-тесты на стандартном модуле `unittest`
+(по 6 тестов на модуль, всего 24): нулевое значение, целые и дробные входные данные
+для `area()` и `perimeter()`. Дробные результаты сравниваются через `assertAlmostEqual`.
+
+Запуск всех тестов из корня проекта:
+
+```bash
+python3 -m unittest -v
+```
+
 ## История изменения проекта
 
 | Хеш коммита | Дата       | Описание изменений                                    |
 | ----------- | ---------- | ----------------------------------------------------- |
-| `8ba9aeb`   | 2026-09-06 | Circle and square added                               |
-| `d078c8d`   | 2026-09-06 | Docs added                                            |
+| `8ba9aeb`   | 2021-03-04 | Circle and square added                               |
+| `d078c8d`   | 2021-03-04 | Docs added                                            |
 | `c384dcb`   | 2026-09-06 | Добавил новый файл rectangle.py                       |
 | `82a5b4f`   | 2026-09-06 | Исправил ошибку в вычислении периметра прямоугольника |
 | `1b40bef`   | 2026-09-09 | Добавил документацию к функциям в файле circle.py     |
 | `c304712`   | 2026-09-09 | Добавил документацию к функциям в файле square.py     |
 | `ca6f717`   | 2026-09-09 | Добавил документацию к функциям в файле rectangle.py  |
 | `81af3bf`   | 2026-09-09 | Добавил документацию к функциям в файле triangle.py   |
+| `0b52b09`   | 2026-09-16 | Добавил unittest для circle.py                        |
+| `310f5bd`   | 2026-09-16 | Добавил unittest для square.py                        |
+| `a02a230`   | 2026-09-16 | Добавил unittest для rectangle.py                     |
+| `2a1193e`   | 2026-09-16 | Добавил unittest для triangle.py                      |
+| `763371f`   | 2026-09-17 | Написал документацию ко всему проекту в формате markdown |
+| `0dd00e7`   | 2026-10-28 | Исправил сравнение float в тестах (assertAlmostEqual) |
+| `b12aadd`   | 2026-10-28 | Добавил .gitignore                                    |
