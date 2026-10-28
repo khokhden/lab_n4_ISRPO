@@ -25,3 +25,7 @@ class RectangleTestCase(unittest.TestCase):
     def test_perimeter_float(self):
         res = perimeter(2.5, 4)
         self.assertEqual(res, 13.0)
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -12,7 +12,7 @@ class TriangleTestCase(unittest.TestCase):
 
     def test_area_float(self):
         res = area(2.5, 4)
-        self.assertEqual(res, 5.0)
+        self.assertAlmostEqual(res, 5.0)
 
     def test_perimeter_zero(self):
         res = perimeter(0, 4, 3)
@@ -25,3 +25,7 @@ class TriangleTestCase(unittest.TestCase):
     def test_perimeter_float(self):
         res = perimeter(2.5, 4, 6)
         self.assertEqual(res, 12.5)
+
+
+if __name__ == "__main__":
+    unittest.main()

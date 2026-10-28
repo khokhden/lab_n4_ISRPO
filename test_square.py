@@ -25,3 +25,7 @@ class SquareTestCase(unittest.TestCase):
     def test_perimeter_float(self):
         res = perimeter(2.5)
         self.assertEqual(res, 10.0)
+
+
+if __name__ == "__main__":
+    unittest.main()
